@@ -1,7 +1,42 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+      /* Add some basic styling */
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Makes the body take up the full height of the viewport */
+        margin: 0; /* Removes default margin */
+        font-family: Arial, sans-serif; /* sets a font */
+      }
+      /* Add styles for light theme */
+      .light-theme {
+        background-color: white;
+        color: black;
+      }
+      /* Add styles for dark theme */
+      .dark-theme {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="light-theme">
+    <h1>Hello, World!</h1>
+    <button id="theme-toggle-btn">Toggle Theme</button>
+    <script>
+      // Get the theme toggle button and add an event listener
+      var themeToggleBtn = document.getElementById("theme-toggle-btn");
+      themeToggleBtn.addEventListener("click", function() {
+        // Get the body element and toggle the "dark-theme" class
+        var body = document.getElementsByTagName("body")[0];
+        body.classList.toggle("dark-theme");
+        body.classList.toggle("light-theme");
+      });
+    </script>
+  </body>
 </html>
+
