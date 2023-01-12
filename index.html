@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Hello, World!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <style>
       /* Add some basic styling */
       body {
@@ -12,21 +13,57 @@
         margin: 0; /* Removes default margin */
         font-family: Arial, sans-serif; /* sets a font */
       }
+
       /* Add styles for light theme */
       .light-theme {
         background-color: white;
         color: black;
       }
+
       /* Add styles for dark theme */
       .dark-theme {
         background-color: black;
         color: white;
       }
+
+      /* Add styles to move button to top-right corner and make it look more rounded */
+      .corner-btn {
+        position: absolute;
+        top: 35px; /* Distance from the top of the screen */
+        right: 20px; /* Distance from the right of the screen */
+        border-radius: 40%; /* Rounded edges */
+        background-color: grey; /* Grey color for the button */
+        font-size: 20px;
+        padding: 10px; /* Padding to make the icon larger */
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.3); /* Adding shadow effect */
+        cursor:pointer;
+      }
+
+      /* Add styles to create top and bottom grey bars */
+      .top-bar, .bottom-bar {
+        position: fixed; /* Keep the bars in a fixed position */
+        width: 100%; /* Full width of the screen */
+        height: 30px; /* Height of the bars */
+        background-color: grey; /* Grey color for the bars */
+        z-index: 1; /* Make sure the bars are on top of the other elements */
+      }
+
+      /* Add styles for top bar */
+      .top-bar {
+        top: 0; /* Position at the top of the screen */
+      }
+
+      /* Add styles for bottom bar */
+      .bottom-bar {
+        bottom: 0; /* Position at the bottom of the screen */
+      }
     </style>
   </head>
   <body class="light-theme">
+    <div class="top-bar"></div>
+    <div class="bottom-bar"></div>
     <h1>Hello, World!</h1>
-    <button id="theme-toggle-btn">Toggle Theme</button>
+    <button id="theme-toggle-btn" class="corner-btn"> <i class="fa fa-lightbulb"></i></button>
     <script>
       // Get the theme toggle button and add an event listener
       var themeToggleBtn = document.getElementById("theme-toggle-btn");
@@ -39,4 +76,3 @@
     </script>
   </body>
 </html>
-
